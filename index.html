@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Will You Be My Valentine?</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      text-align: center;
+      background: linear-gradient(to bottom, #ff87a4, #ffc3a0); /* Gradient background */
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      color: #ff3e63; /* Pink heading */
+      margin-top: 50px;
+      font-size: 36px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      line-height: 1.5;
+    }
+
+    #buttons {
+      margin-top: 30px;
+    }
+
+    button {
+      font-size: 20px;
+      padding: 12px 32px;
+      margin: 0 10px;
+      border: 2px solid #ff3e63; /* Pink border */
+      border-radius: 25px;
+      cursor: pointer;
+      outline: none;
+      transition: background-color 0.3s ease;
+      background-color: transparent;
+      color: #ff3e63; /* Pink text */
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    }
+
+    button:hover {
+      background-color: #ff3e63; /* Pink background on hover */
+      color: #fff; /* White text on hover */
+    }
+
+    #result {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #333; /* Dark text */
+    }
+
+    .move {
+      animation: moveButton 0.5s ease-in-out;
+    }
+
+    @keyframes moveButton {
+      0% {
+        transform: translate(0, 0);
+      }
+
+      50% {
+        transform: translate(-10px, -10px);
+      }
+
+      100% {
+        transform: translate(0, 0);
+      }
+    }
+
+    .cute-gif-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .cute-gif {
+      width: 200px;
+      /* Adjust width as desired */
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+      margin: 0 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Will you be my valentine?❤️</h1>
+  <div id="buttons">
+    <button onclick="answer('yes')">Yes</button>
+    <button onclick="answer('no')" id="noButton">No</button>
+  </div>
+  <div id="result"></div>
+
+  <h2></h2>
+  <div class="cute-gif-container">
+    <img id="initial-gif" class="cute-gif" src="https://media3.giphy.com/media/jsxpFvPXEU2ByvfBkM/giphy.gif?cid=6c09b952xyugfujchkk5z7ak5th9woggn8z6l6fsx07n5itf&ep=v1_internal_gif_by_id&rid=giphy.gif&ct=g" alt="Initial gif">
+    <img id="yes-gif" class="cute-gif" src="https://media0.giphy.com/media/S5h4gvxxc1qlG/giphy.gif?cid=6c09b9522bkvd2ew9u0a8smwjw7ijznr369xqstzk1fglv22&ep=v1_internal_gif_by_id&rid=giphy.gif&ct=g" alt="Yes gif" style="display: none;">
+    <img id="no-gif" class="cute-gif" src="https://media4.giphy.com/media/vySkPlXaNO0ElMIkeo/giphy.gif?cid=6c09b952hgoacxi8gka4hq4b9mvl36gbi575df6sfexqz74u&ep=v1_internal_gif_by_id&rid=giphy.gif&ct=g" alt="No gif" style="display: none;">
+  </div>
+
+  <script>
+    var noResponses = [
+      "Why did you pick no?",
+      "Babe, stop making me mad fr😤😤",
+      "Istg, this is the last time I am asking.",
+      "Nah fr, you picked no again🫠!",
+      "Please say yes🥺🥺🥺!"
+    ];
+    var noGifs = [
+      "https://media4.giphy.com/media/vySkPlXaNO0ElMIkeo/giphy.gif?cid=6c09b952hgoacxi8gka4hq4b9mvl36gbi575df6sfexqz74u&ep=v1_internal_gif_by_id&rid=giphy.gif&ct=g",
+      "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZjVlcmVpdzdiZmpjZmp5ZGt6NWVxOGRpZGsxMmI0OHJjZjJteWlscCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/aNFT7eG2rIKK715uLk/giphy.gif",
+      "https://media.giphy.com/media/OOezqqxPB8aJ2/giphy.gif?cid=790b7611f5ereiw7bfjcfjydkz5eq8didk12b48rcf2myilp&ep=v1_gifs_search&rid=giphy.gif&ct=g",
+      "https://media.giphy.com/media/vyTnNTrs3wqQ0UIvwE/giphy.gif?cid=790b7611f5ereiw7bfjcfjydkz5eq8didk12b48rcf2myilp&ep=v1_gifs_search&rid=giphy.gif&ct=g",
+      "https://media.giphy.com/media/ZyNQFqZLFUhr2/giphy.gif?cid=790b7611pdh77gt8g69iv1bebo4hiocd4lze1t57h7zd8aw9&ep=v1_gifs_search&rid=giphy.gif&ct=g"
+    ];
+    var lastResponseIndex = -1;
+
+    function answer(response) {
+      if (response === 'yes') {
+        document.getElementById('result').innerHTML = "<p>oh I knew you would say yes. Happy Valentines Day Babe. You deserve the whole world! Love Muskan!(Naina)</p>";
+        document.getElementById('initial-gif').style.display = 'none';
+        document.getElementById('yes-gif').style.display = 'block';
+        document.getElementById('no-gif').style.display = 'none';
+      } else if (response === 'no') {
+        lastResponseIndex = (lastResponseIndex + 1) % noResponses.length;
+        document.getElementById('result').innerHTML = "<p>" + noResponses[lastResponseIndex] + "</p>";
+        var button = document.getElementById('noButton');
+        var newX = Math.random() * (window.innerWidth - button.offsetWidth);
+        var newY = Math.random() * (window.innerHeight - button.offsetHeight);
+        button.style.position = 'absolute';
+        button.style.left = newX + 'px';
+        button.style.top = newY + 'px';
+        button.classList.add('move');
+        setTimeout(() => {
+          button.classList.remove('move');
+        }, 500);
+        document.getElementById('initial-gif').style.display = 'none';
+        document.getElementById('yes-gif').style.display = 'none';
+        document.getElementById('no-gif').src = noGifs[lastResponseIndex];
+        document.getElementById('no-gif').style.display = 'block';
+      }
+    }
+  </script>
+</body>
+
+</html>
+<!-- partial -->
+  
+</body>
+</html>

@@ -1,0 +1,145 @@
+body {
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  background-color: #f7e4e4; /* Light pink background */
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  color: #ff5c5c; /* Red heading */
+  margin-top: 50px;
+  font-size: 36px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+#buttons {
+  margin-top: 30px;
+}
+
+button {
+  font-size: 20px;
+  padding: 12px 32px;
+  margin: 0 10px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s ease;
+  background-color: #ff8484; /* Light red */
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+  background-color: #ff5c5c; /* Darker red on hover */
+  body {
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #f7e4e4, #ffc4c4); /* Gradient background */
+  overflow-x: hidden;
+}
+
+h1 {
+  color: #ff5c5c; /* Red heading */
+  margin-top: 50px;
+  font-size: 36px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+#buttons {
+  margin-top: 30px;
+}
+
+button {
+  font-size: 20px;
+  padding: 12px 32px;
+  margin: 0 10px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s ease;
+  background-color: #ff8484; /* Light red */
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+  background-color: #ff5c5c; /* Darker red on hover */
+}
+
+#result {
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+.move {
+  animation: moveButton 0.5s ease-in-out;
+}
+
+@keyframes moveButton {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-10px, -10px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.cute-gif-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.cute-gif {
+  width: 250px; /* Adjust width as desired */
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  margin: 0 10px;
+}
+
+  
+}
+
+#result {
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+.move {
+  animation: moveButton 0.5s ease-in-out;
+}
+
+@keyframes moveButton {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-10px, -10px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.cute-gif-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.cute-gif {
+  width: 250px; /* Adjust width as desired */
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  margin: 0 10px;
+}
